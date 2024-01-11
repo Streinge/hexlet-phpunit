@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexlet\Phpunit;
+namespace App\Implementations;
 
 function set(&$coll, array $path, $value)
 {
@@ -13,8 +13,7 @@ function set(&$coll, array $path, $value)
         $key = $path[$index];
         $newValue = $value;
         if ($index !== $lastIndex) {
-            $objValue = $nested[$key] ?? null;
-            $newValue = is_array($objValue) ? $objValue : [];
+            $newValue = [];
         }
         $nested[$key] = $newValue;
         $nested = &$nested[$key];
@@ -29,9 +28,12 @@ $coll = [
         ]
     ]
 ];
+var_dump(count($coll));
 
-/*set($coll, ['a', 'b', 'c', null], 5);
+set($coll, ['x', 'y', 'z'], 4);
 print_r($coll);
+var_dump(count($coll));
+
 //=> [
 //=>     "a" => [
 //=>         "b" => [

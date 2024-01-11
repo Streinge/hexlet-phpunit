@@ -22,10 +22,20 @@ class SetTest extends TestCase
         set($this->coll, $coll2, $value);
         $expected = ["a" => ["b" => ["c" => 4]]];
         $this->assertEquals($expected, $this->coll);
-        $col13 = ['x', 'y', 'z'];
-        $value1 = 5;
-        set($this->coll, $col13, $value1);
-        $expected1 = ["a" => ["b" => ["c" => 4]], "x" => ["y" => ["z" => 5]]];
-        $this->assertEquals($expected1, $this->coll);
+        $coll2 = ['a', 'b', 'c', null];
+        $value = 5;
+        set($this->coll, $coll2, $value);
+        $expected1 = ["a" => ["b" => ["c" => 4]]];
+        $this->assertEquals($expected, $this->coll);
+
     }
 }
+
+/*$test1 = new SetTest();
+$test1->setUp(coll);
+$test1->testSet();
+$col13 = ['x', 'y', 'z'];
+$value1 = 5;
+set($test1->coll, $col13, $value1);
+$expected1 = ["a" => ["b" => ["c" => 4]], "x" => ["y" => ["z" => 5]]];
+$this->assertEquals($expected1, $this->coll);*/
