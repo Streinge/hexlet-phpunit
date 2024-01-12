@@ -18,8 +18,7 @@
       "Php\\Package\\": "src"
     },
     "files": [
-      "src/Utils.php",
-      "src/Set.php"
+      "src/Cart.php"
   ]
   },
   "autoload-dev": {
