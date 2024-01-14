@@ -4,7 +4,7 @@ namespace Hexlet\Phpunit;
 
 class Cart
 {
-    private $items = [];
+    private array $items = [];
 
     public function addItem(array $good, int $count): void
     {
@@ -21,7 +21,7 @@ class Cart
         return array_reduce($this->items, fn ($acc, $item) => $acc + $item['count'], 0);
     }
 
-    public function getCost(): int
+    public function getCost(): float|int|null
     {
         return array_reduce($this->items, fn ($acc, $item) => $acc + $item['good']['price'] * $item['count']);
     }
